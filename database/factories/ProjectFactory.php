@@ -1,0 +1,21 @@
+<?php
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\Project;
+use Faker\Generator as Faker;
+use App\User;
+
+$factory->define(Project::class, function (Faker $faker) {
+    return [
+        'title'=>$faker->sentence(4),
+        'description'=>$faker->sentence(4),
+        //'user_id'=>function(){
+           // return factory(User::class)->create()->id;
+       // }
+       'notes'=>'Foobar notes',
+       'owner_id'=>factory(User::class)
+        
+        
+    ];
+});
